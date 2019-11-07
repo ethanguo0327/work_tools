@@ -1,0 +1,7 @@
+<launch>
+  <param name="use_sim_time" value="true"/><!--表示使用bag里的时间-->
+  <!--<node pkg="tf2_ros" type="static_transform_publisher" name="laser_tf" args="0.3 0 0 0 0 0 base_link base_laser"/>--> <!--发布静态tf-->
+  <node pkg="map_server" type="map_server" name="map_server" args="地图路径/map/map.yaml" respawn="false" output="screen">
+    <param name="frame_id" value="world" />
+  </node>
+</launch>
