@@ -1,0 +1,16 @@
+<launch> 
+<node pkg="rviz" type="rviz" name="rviz" args="-d /home/ethan/Documents/现场问题/move_base.rviz"/>
+
+<node pkg="tf2_ros" type="static_transform_publisher" name="tfs0" args="0.377 0 0 0 0 0 base_link base_laser" /> 
+
+<node pkg="tf2_ros" type="static_transform_publisher" name="tfs1" args="0.371 0 0 0 0 0 base_link camera_link" /> 
+<node pkg="tf2_ros" type="static_transform_publisher" name="tfs2" args="-0.186 0 0 3.14 0 0 base_link camera_link2" /> 
+
+<node pkg="tf2_ros" type="static_transform_publisher" name="tfs3" args="0.423  -0.065  0  -0.20427  0 0 base_link ultrasonic0" /> 
+<node pkg="tf2_ros" type="static_transform_publisher" name="tfs4" args="0.423   0.065  0   0.20427  0 0 base_link     ultrasonic1" /> 
+<node pkg="tf2_ros" type="static_transform_publisher" name="tfs5" args="0.217   0.280  0   1.34322  0 0 base_link     ultrasonic2" /> 
+<node pkg="tf2_ros" type="static_transform_publisher" name="tfs6" args="-0.195   0.163  0   2.63411  0 0 base_link     ultrasonic3" /> 
+<node pkg="tf2_ros" type="static_transform_publisher" name="tfs7" args="-0.195  -0.163  0  -2.63411  0 0 base_link     ultrasonic4" /> 
+<node pkg="tf2_ros" type="static_transform_publisher" name="tfs8" args="0.217  -0.280  0  -1.34322  0 0 base_link     ultrasonic5" /> 
+</launch>
+
