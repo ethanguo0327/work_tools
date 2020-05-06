@@ -3,7 +3,7 @@
   <arg name="map_path"/>
   <arg name="map_name"/>
   <!--<node pkg="tf2_ros" type="static_transform_publisher" name="laser_tf" args="0.3 0 0 0 0 0 base_link base_laser"/>-->
-  <node pkg="map_server" type="map_server" name="map_server" args="$(arg map_path)/map.yaml" respawn="false" output="screen">
-    <param name="frame_id" value="world" />
+  <node pkg="map_server" type="map_server" name="map_server" args="$(arg map_path)/$(arg map_name)/map.yaml" respawn="false" output="screen">
+    <param name="frame_id" value="map" />
   </node>
 </launch>

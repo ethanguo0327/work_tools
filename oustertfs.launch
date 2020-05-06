@@ -1,0 +1,5 @@
+<launch> 
+<param name="use_sim_time" value="true"/>
+<node pkg="tf2_ros" type="static_transform_publisher" name="tfs8" args="0.05  0.1  0.6  0  0 1 0 base_link     os1_lidar " /> 
+</launch>
+

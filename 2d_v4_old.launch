@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+  <param name="use_sim_time" value="true" />
+  <node pkg="mapping_bridge" type="mapping_bridge" name="mapping_bridge" respawn="true" output="screen">
+    <remap from="gs_robot/mapping/current_map" to="currentMap" />
+    <param name="config_dir" value = "$(find gaussian_mapping_v5)/configuration_files" />
+    <param name="config_basename" value = "mapping_2d.gsp" />
+    <param name="config_basename_localization" value = "localization_2d.gsp" />
+  </node>
+ <node name="gaussian_mapping_v5" pkg="gaussian_mapping_v5" respawn="true" type="gaussian_mapping_v5" args="$(find gaussian_mapping_v5)/configuration_files mapping_2d.gsp true" output="screen">
+    <remap from="points2" to="rslidar_points_origin" />
+    <remap from="gps_init" to="gps"/>
+ </node>
+
+  <!-- <node pkg="tf2_ros" type="static_transform_publisher" respawn="true" name="laser_tf" args="1.01 0 0 0 0 0 base_link base_laser" /> -->
+  <node name="rviz" pkg="rviz" type="rviz" required="true"
+      args="-d $(find gaussian_mapping_v5)/v5_configuration_files/demo_2d.rviz" />
+  <include file="$(find rslidar_pointcloud)/launch/demo_cloud_node.launch" />
+</launch>

@@ -3,7 +3,9 @@ roslaunch /home/ethan/catkin_ws/src/gaussian_mapping_v5/v5_configuration_files/l
 sleep 2
 rqt_console &
 sleep 0.5
-/home/ethan/Documents/Gaussian_src/mapbrg/mapping_bridge_1/output/kinetic/test_v4_service localization_init 
+/home/ethan/Documents/Gaussian_src/mapbrg/mapping_bridge_t1_4_5/output/kinetic/test_v4_service localization_init 
+sleep 1
+/home/ethan/Documents/Gaussian_src/mapbrg/mapping_bridge_t1_4_5/output/kinetic/test_v4_service localization_start 
 sleep 4
 #/home/ethan/Documents/Gaussian_src/mapbrg/mapping_bridge_1/output/kinetic/test_v4_service localization_start 
 sleep 0.5 &
